@@ -223,7 +223,7 @@ x_train , y_train = np.array(x_train) , np.array(y_train)
 model =load_model('kera_model.h5')
 #testing part
 past_100_days = data_training.tail(100)
-final_df = past_100_days.concat(data_testing,ignore_index=True)
+final_df =pd.concat([data_testing, past_100_days])
 input_data = scaler.fit_transform(final_df)
 x_test=[]
 y_test=[]
