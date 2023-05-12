@@ -215,8 +215,8 @@ data_training_array = scaler.fit_transform(data_training)
 x_train = []
 y_train = []
 for i in range(100,data_training_array.shape[0]):
-    x_train.append(data_training_array[i-100: i])
-    y_train.append(data_training_array[i,0])   
+    x_train.concat(data_training_array[i-100: i])
+    y_train.concat(data_training_array[i,0])   
 #spliting data into x_train and y_train
 x_train , y_train = np.array(x_train) , np.array(y_train)
 #loading pretrained model
